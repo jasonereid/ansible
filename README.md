@@ -28,7 +28,7 @@ Groups of servers can be set using a friendly name as shown below:
     app2
     app3
     
-You can also create groups of groups
+You can also create groups of groups, you just include the groups in a group and specify :children in the title of the group of groups.
 
     [master_server_group:children]
     server_group1
