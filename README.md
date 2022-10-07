@@ -23,4 +23,14 @@ Groups of servers can be set using a friendly name as shown below:
     sql_db1
     web_1
     
+    [web_app_group1]
+    web_1
+    app2
+    app3
+    
+You can also create groups of groups
+
+    [master_server_group:children]
+    server_group1
+    web_app_group1
     
