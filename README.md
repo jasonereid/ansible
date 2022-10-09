@@ -46,3 +46,26 @@ Playbooks provide a list of instructions for the servers that are managed by Ans
                     name: 'Execute a cat command to display host file'
                     command: cat /etc/hosts
                     
+You can use Playbooks to start servers, install applications, update things, restart, or even stop servers or individual services on a server.
+
+    -
+        name: 'Stop the web services on web server nodes'
+        hosts: web_nodes
+        tasks:
+            -
+                name: 'Stop the web services on web server nodes'
+                command: 'service httpd stop'
+    -
+        name: 'Shutdown the database services on db server nodes'
+        hosts: db_nodes
+        tasks:
+            -
+               name: 'Shutdown the database services on db server nodes'
+               command: 'service mysql stop'
+    -
+        name: 'Shutdown the database services on db server nodes'
+        hosts: all_nodes
+        tasks:        
+            -
+                name: 'Restart all servers (web and db) at once'
+                command: '/sbin/shutdown -r'
