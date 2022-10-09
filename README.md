@@ -40,7 +40,7 @@ Playbooks provide a list of instructions for the servers that are managed by Ans
 
         -
             name: 'cat hostfile playbook'
-            hosts: localhost
+            hosts: web_1
             tasks:
                 -
                     name: 'Execute a cat command to display host file'
