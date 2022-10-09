@@ -34,3 +34,15 @@ You can also create groups of groups, you just include the groups in a group and
     server_group1
     web_app_group1
     
+## Ansible Playbooks
+
+Playbooks provide a list of instructions for the servers that are managed by Ansible. The format is simple: You have a YAML dictionary with a name:, a host:, and then an order list called tasks: that specifes what you want the server to do. Example:
+
+        -
+            name: 'cat hostfile playbook'
+            hosts: localhost
+            tasks:
+                -
+                    name: 'Execute a cat command to display host file'
+                    command: cat /etc/hosts
+                    
