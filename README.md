@@ -103,7 +103,7 @@ Here is an example that uses the lineinfile, script, and service modules:
     
 ## Variables
 
-You can use variables in your playbooks so that you don't have to change the playbook itself, but only update your inventory file when things change. You define variables using the vars: option in your playbook, or by defining then in your inventory and then referencing them in your playbook. Example:
+You can use variables in your playbooks so that you don't have to change the playbook itself, but only update your inventory file when things change. You define variables using the vars: option in your playbook, or by defining then in your inventory and then referencing them in your playbook. In order to reference them inside other commands, you need to use two sets of curly brackets. Example:
 
         -
              name: 'Show some variables'
