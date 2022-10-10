@@ -112,6 +112,24 @@ You can use variables in your playbooks so that you don't have to change the pla
                 age: 87
                 gender: male
                 name: John Smith
+                
+Another example:
+
+        vars:
+        packages:
+            - httpd
+            - binutils
+            - glibc
+            - ksh
+            - libaio
+            - libXext
+            - gcc
+            - make
+            - sysstat
+            - unixODBC
+            - mongodb
+            - nodejs
+            - grunt
       
 Another example:
 
