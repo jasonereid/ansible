@@ -113,4 +113,19 @@ You can use variables in your playbooks so that you don't have to change the pla
                 gender: male
                 name: John Smith
       
-      
+Another example:
+
+    -
+       name: 'Print list of fruits'
+       hosts: localhost
+       vars:
+           fruits:
+               - Apple
+               - Banana
+               - Grapes
+               - Orange
+       tasks:
+           -
+               command: 'echo "{{ item }}"' 
+               with_items: '{{ fruits }}'
+
