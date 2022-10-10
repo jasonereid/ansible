@@ -101,3 +101,16 @@ Here is an example that uses the lineinfile, script, and service modules:
                     name: httpd
                     state: present
     
+## Variables
+
+You can use variables in your playbooks so that you don't have to change the playbook itself, but only update your inventory file when things change. You define variables using the vars: option in your playbook, or by defining then in your inventory and then referencing them in your playbook. Example:
+
+        -
+             name: 'Show some variables'
+             hosts: localhost
+             vars: 
+                age: 87
+                gender: male
+                name: John Smith
+      
+      
