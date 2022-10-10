@@ -69,3 +69,11 @@ You can use Playbooks to start servers, install applications, update things, res
             -
                 name: 'Restart all servers (web and db) at once'
                 command: '/sbin/shutdown -r'
+
+## Modules
+
+You can run modules in Ansible to do more complex tasks. See the entire list of [builtin modules here](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html). Here is an example using the script module:
+
+        - name: Run a Powershell script on a windows host
+          script: subdirectories/under/path/with/your/playbook/script.ps1
+
