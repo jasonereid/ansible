@@ -3,6 +3,8 @@ Simple Ansible Commands
 
 [Official User Guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 
+[Service Module Guide](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html)
+
 ## Ansible Inventory
 The Ansible inventory file lists servers or computers that Ansible will manage. This follows a simple YAML format explained below:
 
@@ -79,3 +81,23 @@ You can run modules in Ansible to do more complex tasks. See the entire list of 
         - name: Run a Powershell script on a windows host
           script: subdirectories/under/path/with/your/playbook/script.ps1
 
+Here is an example that uses the lineinfile, script, and service modules:
+
+    -
+        name: 'Execute a script on all web server nodes'
+        hosts: web_nodes
+        tasks:
+            -
+                name: 'add a new line'
+                lineinfile: 
+                    path: /etc/resolv.conf
+                    line: 'nameserver 10.1.250.10'
+            -
+                name: 'Execute a script'
+                script: /tmp/install_script.sh
+            -
+                name: 'Start httpd service'
+                service:
+                    name: httpd
+                    state: present
+    
